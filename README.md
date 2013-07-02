@@ -1,4 +1,4 @@
 everlive-OAuth-hybrid
 =====================
 
-OAuth with Everlive sample app
+Sample app for Everlive showing authentication with Google, Facebook and LiveId using PhoneGap.
