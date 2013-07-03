@@ -32,6 +32,9 @@
     <Folder Include="App_Resources\Android\drawable-nodpi">
       <Platform>Android</Platform>
     </Folder>
+    <Folder Include="scripts" />
+    <Folder Include="scripts\app" />
+    <Folder Include="scripts\lib" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="App_Resources\iOS\icon.png" />
@@ -57,11 +60,11 @@
     <Resource Include="App_Resources\Android\drawable-nodpi\splashscreen.9.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="everlive\everlive.all.min.js" />
+    <Content Include="scripts\lib\everlive.all.min.js" />
     <Content Include="index.html" />
-    <Content Include="css\index.css" />
-    <Content Include="js\identity-provider.js" />
-    <Content Include="js\index.js" />
+    <Content Include="styles\index.css" />
+    <Content Include="scripts\app\identity-provider.js" />
+    <Content Include="scripts\app\main.js" />
     <Content Include="img\logo.png" />
     <Content Include="img\cordova.png" />
     <Content Include="cordova.ios.js">

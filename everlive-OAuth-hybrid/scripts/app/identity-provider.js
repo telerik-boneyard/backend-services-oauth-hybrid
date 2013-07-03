@@ -35,15 +35,7 @@ var IdentityProvider = function (config) {
 		ref = window.open(authorize_url, '_blank', 'location=no');
 		console.log(authorize_url)
         
-		console.log("Attaching loadstart event")
-		ref.addEventListener('loadstart', function(event) {
-			console.log("loadstart event handler")
-			that.facebookLocChanged(event.url, callback);
-		});
-        
-		console.log("Attaching loadstop event")
 		ref.addEventListener('loadstop', function(event) {
-			console.log("loadstop event handler")
 			that.locationChanged(event.url, callback);
 		});
 	}

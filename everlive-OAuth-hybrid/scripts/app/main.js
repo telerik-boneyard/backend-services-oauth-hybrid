@@ -1,21 +1,23 @@
-/*
-* Licensed to the Apache Software Foundation (ASF) under one
-* or more contributor license agreements.  See the NOTICE file
-* distributed with this work for additional information
-* regarding copyright ownership.  The ASF licenses this file
-* to you under the Apache License, Version 2.0 (the
-* "License"); you may not use this file except in compliance
-* with the License.  You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing,
-* software distributed under the License is distributed on an
-* "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-* KIND, either express or implied.  See the License for the
-* specific language governing permissions and limitations
-* under the License.
-*/
+var everliveApiKey = '';
+
+//Settings of your Facebook project
+var fbSettings = {
+    client_id: '',
+	redirect_uri:'',
+}
+
+//Settings of your Google project
+var gSettings = {
+    client_id: '',
+	redirect_uri:'',
+}
+
+//Settings of you LiveID project
+var liveSettings = {
+    client_id: '',
+	redirect_uri:'',
+}
+
 var app = {
 	// Application Constructor
 	initialize: function() {
@@ -41,7 +43,7 @@ var app = {
 	},
 	initializeEverlive:function() {
 		Everlive.init({
-			apiKey: ''
+			apiKey: everliveApiKey
 		});
 	},
 	initializeFacebookAuthentication: function() {
@@ -50,8 +52,8 @@ var app = {
 			loginMethodName: "loginWithFacebook",
 			endpoint: "https://www.facebook.com/dialog/oauth",
 			response_type:"token",
-			client_id: "622842524411586",
-			redirect_uri:"https://www.facebook.com/connect/login_success.html",
+			client_id: fbSettings.client_id,
+			redirect_uri: fbSettings.redirect_uri,
 			access_type:"online",
 			scope:"email",
 			display: "touch"
@@ -80,8 +82,8 @@ var app = {
 			loginMethodName:"loginWithGoogle",
 			endpoint: "https://accounts.google.com/o/oauth2/auth",
 			response_type: "token",
-			client_id: "778590299624.apps.googleusercontent.com",
-			redirect_uri: "https://www.facebook.com/connect/login_success.html", 				 
+			client_id: gSettings.client_id,
+			redirect_uri: gSettings.redirect_uri, 				 
 			scope: "https://www.googleapis.com/auth/userinfo.profile", 
 			access_type: "online",
 			display: "touch" 
@@ -111,8 +113,8 @@ var app = {
 			loginMethodName:"loginWithLiveID",
 			endpoint: "https://login.live.com/oauth20_authorize.srf",
 			response_type: "token",
-			client_id: "00000000480F82FA",
-			redirect_uri: "https://www.everlive.com/SignIn", 				 
+			client_id: liveSettings.client_id,
+			redirect_uri: liveSettings.redirect_uri,				 
 			scope: "wl.basic",
 			access_type: "online",
 			display: "touch"
