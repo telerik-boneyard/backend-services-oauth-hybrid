@@ -1,22 +1,18 @@
+//This is your Everlive APIKey
 var everliveApiKey = '';
 
-//Settings of your Facebook project
-var fbSettings = {
-    client_id: '',
-	redirect_uri:'',
-}
+///This is the info of Facebook project
+var facebookClientId = '',
+	facebookRedirectUri = '';
 
-//Settings of your Google project
-var gSettings = {
-    client_id: '',
-	redirect_uri:'',
-}
+//This is the info of your Google Project
+var googleClientId = '',
+	googleRedirectUri = '';
 
-//Settings of you LiveID project
-var liveSettings = {
-    client_id: '',
-	redirect_uri:'',
-}
+///This is the info of LiveID project
+var liveIdClientId = '',
+	liveIdRedirectUri = '';
+
 
 var app = {
 	// Application Constructor
@@ -52,8 +48,8 @@ var app = {
 			loginMethodName: "loginWithFacebook",
 			endpoint: "https://www.facebook.com/dialog/oauth",
 			response_type:"token",
-			client_id: fbSettings.client_id,
-			redirect_uri: fbSettings.redirect_uri,
+			client_id: facebookClientId,
+			redirect_uri: facebookRedirectUri,
 			access_type:"online",
 			scope:"email",
 			display: "touch"
@@ -82,8 +78,8 @@ var app = {
 			loginMethodName:"loginWithGoogle",
 			endpoint: "https://accounts.google.com/o/oauth2/auth",
 			response_type: "token",
-			client_id: gSettings.client_id,
-			redirect_uri: gSettings.redirect_uri, 				 
+			client_id: googleClientId,
+			redirect_uri: googleRedirectUri, 				 
 			scope: "https://www.googleapis.com/auth/userinfo.profile", 
 			access_type: "online",
 			display: "touch" 
@@ -113,8 +109,8 @@ var app = {
 			loginMethodName:"loginWithLiveID",
 			endpoint: "https://login.live.com/oauth20_authorize.srf",
 			response_type: "token",
-			client_id: liveSettings.client_id,
-			redirect_uri: liveSettings.redirect_uri,				 
+			client_id: liveIdClientId,
+			redirect_uri: liveIdRedirectUri,				 
 			scope: "wl.basic",
 			access_type: "online",
 			display: "touch"
