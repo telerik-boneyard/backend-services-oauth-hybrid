@@ -21,15 +21,23 @@ var IdentityProvider = function (config) {
 	var that = this;
     
 	this.getAccessToken = function(callback) {
-		console.log("Begin authorization with: " + config.providerName);
+		console.log("Begin authorization with: " + config.name);
 		// Begin Authorization
-		var authorize_url = config.endpoint
+        var authorize_url;
+        if(config.name == 'ADFS'){
+             authorize_url = config.endpoint
+                            +"?wa=" + config.wa
+                            +"&wtrealm=" + config.wtrealm;
+        }
+        else{
+		    authorize_url = config.endpoint
 							+ "?response_type=" + config.response_type
 							+ "&client_id=" + config.client_id
 							+ "&redirect_uri=" + config.redirect_uri
 							+ "&display=" + config.display
 							+ "&access_type=" + config.access_type
-							+ "&scope=" + config.scope
+							+ "&scope=" + config.scope;
+            }
    
 		//CALL IN APP BROWSER WITH THE LINK
 		ref = window.open(authorize_url, '_blank', 'location=no');

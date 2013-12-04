@@ -13,6 +13,9 @@ var googleClientId = '',
 var liveIdClientId = '',
 	liveIdRedirectUri = '';
 
+///Settings for ADFS authentication
+var adfsRealm = '',
+    adfsEndpoint = '';
 
 var app = {
 	// Application Constructor
@@ -35,6 +38,7 @@ var app = {
 		app.initializeFacebookAuthentication();
 		app.initializeGoogleAuthentication(); 
 		app.initializeLiveIdAuthentication();
+        app.initializeADFSAuthentication();
 		navigator.splashscreen.hide();
 	},
 	initializeEverlive:function() {
@@ -121,6 +125,32 @@ var app = {
 		loginLiveIdBtn.addEventListener('click', function() {
 			liveId.getAccessToken(function(token){
                 Everlive.$.Users.loginWithLiveID(token)
+				.then(function(res) {
+					console.log(res);
+					var message = "Welcome to Everlive!";
+					navigator.notification.alert(message, function() {
+					}, "Everlive")
+				}, function(err) {
+					console.log(err);
+					navigator.notification.alert(err.message, function() {
+					}, "Everlive")
+				})
+            })
+		});
+	},
+    initializeADFSAuthentication: function() {
+		var adfsConfig = {
+			name: "ADFS",
+			loginMethodName: "loginWithADFS",
+			endpoint: adfsEndpoint ,
+            wa: 'wsignin1.0',
+            wtrealm: adfsRealm 
+		};
+		var adfs = new IdentityProvider(adfsConfig); 
+		var loginADFSBtn = document.getElementById("loginADFS");
+		loginADFSBtn.addEventListener('click', function() {
+			adfs.getAccessToken(function(token){
+                Everlive.$.Users.loginWithADFS(token)
 				.then(function(res) {
 					console.log(res);
 					var message = "Welcome to Everlive!";
