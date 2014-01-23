@@ -1,4 +1,4 @@
-everlive-OAuth-hybrid
+backend-services-OAuth-hybrid
 =====================
 
-Sample app for Everlive showing authentication with Google, Facebook and LiveId using PhoneGap.
+Sample app for Backend Services showing authentication with Google, Facebook and LiveId using PhoneGap.
