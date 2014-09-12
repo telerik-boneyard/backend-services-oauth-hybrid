@@ -40,7 +40,7 @@ var IdentityProvider = function (config) {
                             + "&scope=" + config.scope;
         }
    
-        //CALL IN APP BROWSER WITH THE LINK
+        // call the In-App browser with the authorization URL
         ref = window.open(authorize_url, '_blank', 'location=no');
         
         ref.addEventListener('loadstop', function(event) {
