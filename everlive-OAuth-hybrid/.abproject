@@ -1,7 +1,7 @@
 {
   "ProjectGuid": "8fa7ef35-175b-40a9-a497-dcef905450f8",
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
-  "AppIdentifier": "com.telerik.PushNotificationApp",
+  "AppIdentifier": "com.telerik.oauthhybrid",
   "ProjectName": "everlive-OAuth-hybrid",
   "AndroidPermissions": [
     "android.permission.CAMERA",
@@ -40,20 +40,20 @@
   "CorePlugins": [
     "org.apache.cordova.battery-status",
     "org.apache.cordova.camera",
+    "org.apache.cordova.media-capture",
     "org.apache.cordova.console",
     "org.apache.cordova.contacts",
     "org.apache.cordova.device",
     "org.apache.cordova.device-motion",
     "org.apache.cordova.device-orientation",
-    "org.apache.cordova.dialogs",
     "org.apache.cordova.file",
     "org.apache.cordova.file-transfer",
     "org.apache.cordova.geolocation",
     "org.apache.cordova.globalization",
     "org.apache.cordova.inappbrowser",
     "org.apache.cordova.media",
-    "org.apache.cordova.media-capture",
     "org.apache.cordova.network-information",
+    "org.apache.cordova.dialogs",
     "org.apache.cordova.splashscreen",
     "org.apache.cordova.vibration"
   ],
@@ -61,5 +61,10 @@
   "DisplayName": "",
   "Author": "",
   "Description": "everlive-OAuth-hybrid",
-  "FrameworkVersion": "3.5.0"
+  "FrameworkVersion": "3.5.0",
+  "CordovaPluginVariables": {
+    "com.telerik.mobiletesting": {
+      "IOS_APP_URL": ""
+    }
+  }
 }
