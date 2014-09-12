@@ -24,10 +24,11 @@ var IdentityProvider = function (config) {
         console.log("Begin authorization with: " + config.name);
         // Begin Authorization
         var authorize_url;
-        if (config.name == 'ADFS') {
+        if (config.name === 'ADFS') {
             authorize_url = config.endpoint
-                            + "?wa=" + config.wa
-                            + "&wtrealm=" + config.wtrealm;
+                            + '?wa=' + config.wa
+                            + '&wreply=' + config.wtrealm + '/adfs/token'
+                            + '&wtrealm=' + config.wtrealm;
         }
         else {
             authorize_url = config.endpoint
