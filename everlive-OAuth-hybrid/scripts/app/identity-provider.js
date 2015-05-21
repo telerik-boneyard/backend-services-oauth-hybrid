@@ -7,9 +7,7 @@ function getParameterByName(name, url) {
             
     var regex = new RegExp(regexS);
     var results = regex.exec(url);
-            
-    console.log("Result: " + results);
-            
+                     
     if (results == null) {
         return false;
     }
